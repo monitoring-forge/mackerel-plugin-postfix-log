@@ -1,67 +1,43 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
-	"log"
 	"os"
+	"path/filepath"
 	"runtime"
 
 	flags "github.com/jessevdk/go-flags"
-	"github.com/kazeburo/followparser"
-	"github.com/kazeburo/mackerel-plugin-postfix-log/postfixlog"
+	"github.com/mackerelio/golib/pluginutil"
+	"github.com/monitoring-forge/followparser"
+	"github.com/monitoring-forge/mackerel-plugin-postfix-log/postfixlog"
 )
 
-// Version by Makefile
 var version string
+var commit string
 
-type cmdOpts struct {
-	LogFile       string `long:"logfile" default:"/var/log/maillog" description:"path to nginx ltsv logfile" required:"true"`
+type Opt struct {
+	LogFile       string `long:"logfile" default:"/var/log/maillog" description:"path to postfix/maillog logfile" required:"true"`
 	PosFilePrefix string `long:"posfile-prefix" default:"maillog" description:"prefix added position file"`
 	Version       bool   `short:"v" long:"version" description:"Show version"`
+	Verbose       bool   `short:"V" long:"verbose" description:"Show verbose log"`
 }
 
-var logFilter = []byte(" postfix/smtp[")
-
-type parser struct {
-	bin *postfixlog.StatsBin
-}
-
-func (p *parser) Parse(b []byte) error {
-	if bytes.Index(b, logFilter) < 0 {
-		return nil
+func (opt *Opt) run() (string, error) {
+	pp := postfixlog.NewPostfixParser()
+	fp := &followparser.Parser{
+		WorkDir:  pluginutil.PluginWorkDir(),
+		Callback: pp,
+		Silent:   !opt.Verbose,
 	}
-	s, err := postfixlog.Parse(b)
+	_, err := fp.Parse(
+		fmt.Sprintf("%s-postfixlog", opt.PosFilePrefix),
+		opt.LogFile,
+	)
+	out := pp.Output()
 	if err != nil {
-		return err
+		return "", err
 	}
-	p.bin.Append(s)
-	return nil
-}
-
-func (p *parser) Finish(duration float64) {
-	p.bin.Display(duration)
-}
-
-func getStats(opts cmdOpts) error {
-	bin := postfixlog.NewStatsBin()
-	p := &parser{bin}
-	err := followparser.Parse(fmt.Sprintf("%s-postfixlog", opts.PosFilePrefix), opts.LogFile, p)
-	if err != nil {
-		return err
-	}
-	return nil
-
-}
-
-func printVersion() {
-	fmt.Printf(`%s %s
-Compiler: %s %s
-`,
-		os.Args[0],
-		version,
-		runtime.Compiler,
-		runtime.Version())
+	return out, nil
 }
 
 func main() {
@@ -69,21 +45,34 @@ func main() {
 }
 
 func _main() int {
-	opts := cmdOpts{}
-	psr := flags.NewParser(&opts, flags.HelpFlag|flags.PassDoubleDash)
+	opt := Opt{}
+	psr := flags.NewParser(&opt, flags.HelpFlag|flags.PassDoubleDash)
 	_, err := psr.Parse()
-	if opts.Version {
-		printVersion()
+	if opt.Version {
+		if commit == "" {
+			commit = "dev"
+		}
+		fmt.Printf(
+			"%s-%s\n%s/%s, %s, %s\n",
+			filepath.Base(os.Args[0]),
+			version,
+			runtime.GOOS,
+			runtime.GOARCH,
+			runtime.Version(),
+			commit)
 		return 0
 	}
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		return 1
 	}
-	err = getStats(opts)
+
+	output, err := opt.run()
 	if err != nil {
-		log.Printf("getStats :%v", err)
+		fmt.Fprintf(os.Stderr, "%v\n", err)
 		return 1
 	}
+	fmt.Print(output)
+
 	return 0
 }

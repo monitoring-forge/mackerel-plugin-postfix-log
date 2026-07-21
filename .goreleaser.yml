@@ -1,14 +1,10 @@
 builds:
   - binary: mackerel-plugin-postfix-log
     goos:
-      - darwin
       - linux
     goarch:
       - amd64
       - arm64
-    ignore:
-      - goos: darwin
-        goarch: arm64
     env:
       - CGO_ENABLED=0
 archives:
@@ -16,5 +12,5 @@ archives:
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
 release:
   github:
-    owner: kazeburo
+    owner: monitoring-forge
     name: mackerel-plugin-postfix-log

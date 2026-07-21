@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"time"
 
 	flags "github.com/jessevdk/go-flags"
 	"github.com/mackerelio/golib/pluginutil"
@@ -33,7 +34,7 @@ func (opt *Opt) run() (string, error) {
 		fmt.Sprintf("%s-postfixlog", opt.PosFilePrefix),
 		opt.LogFile,
 	)
-	out := pp.Output()
+	out := pp.Output(time.Now())
 	if err != nil {
 		return "", err
 	}

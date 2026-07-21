@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"regexp"
 	"strconv"
-	"unsafe"
 )
 
 type Stats struct {
@@ -17,12 +16,12 @@ type Stats struct {
 }
 
 func bFloat64(b []byte) float64 {
-	f, _ := strconv.ParseFloat(*(*string)(unsafe.Pointer(&b)), 64)
+	f, _ := strconv.ParseFloat(string(b), 64)
 	return f
 }
 
 func bInt(b []byte) int {
-	i, _ := strconv.Atoi(*(*string)(unsafe.Pointer(&b)))
+	i, _ := strconv.Atoi(string(b))
 	return i
 }
 

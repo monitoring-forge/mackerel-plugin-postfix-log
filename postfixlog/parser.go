@@ -50,8 +50,8 @@ func (pp *PostfixParser) Finish(duration float64) {
 	pp.StatsBin.duration = duration
 }
 
-func (pp *PostfixParser) Output() string {
-	return pp.StatsBin.Output()
+func (pp *PostfixParser) Output(nowTime time.Time) string {
+	return pp.StatsBin.Output(nowTime)
 }
 
 func NewStatsBin() *StatsBin {
@@ -102,9 +102,9 @@ func (sb *StatsBin) OutputDelay(w io.Writer, key string, arr []float64, now uint
 }
 
 // Display :
-func (sb *StatsBin) Output() string {
+func (sb *StatsBin) Output(nowTime time.Time) string {
 	var buf bytes.Buffer
-	now := uint64(time.Now().Unix())
+	now := uint64(nowTime.Unix())
 	sb.OutputDelay(&buf, "total", sb.delays, now)
 	sb.OutputDelay(&buf, "recving", sb.receivingDelay, now)
 	sb.OutputDelay(&buf, "queuing", sb.queuingDelay, now)

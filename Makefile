@@ -6,27 +6,12 @@ all: mackerel-plugin-postfix-log
 
 .PHONY: mackerel-plugin-postfix-log
 
-mackerel-plugin-postfix-log: main.go
+mackerel-plugin-postfix-log: main.go postfixlog/*.go
 	go build $(LDFLAGS) -o mackerel-plugin-postfix-log
 
-linux: main.go
+linux: main.go postfixlog/*.go
 	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o mackerel-plugin-postfix-log
 
-deps:
-	go get -d
-	go mod tidy
-
-deps-update:
-	go get -u -d
-	go mod tidy
-
 check:
-	go test ./...
+	go test -v ./...
 
-clean:
-	rm -rf mackerel-plugin-postfix-log
-
-tag:
-	git tag v${VERSION}
-	git push origin v${VERSION}
-	git push origin master

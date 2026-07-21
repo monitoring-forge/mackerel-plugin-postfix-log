@@ -51,4 +51,4 @@ postfixlog.transfer_ratio.5xx_percentage        0.000000        1555681849
 
 ## Install
 
-Please download release page or `mkr plugin install kazeburo/mackerel-plugin-postfix-log`.
+Please download release page or `mkr plugin install monitoring-forge/mackerel-plugin-postfix-log`.

@@ -6,24 +6,19 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Go
-        uses: actions/setup-go@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v4
+      - uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v4
         with:
           go-version-file: go.mod
 
       - name: test
         run: make check
-        env:
-          CGO_ENABLED: 0
 
       - name: Snapshot GoReleaser
-        uses: goreleaser/goreleaser-action@v5
+        uses: goreleaser/goreleaser-action@ec59f474b9834571250b370d4735c50f8e2d1e29 # v7.0.0
         with:
           version: latest
           args: build --snapshot

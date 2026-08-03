@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/jessevdk/go-flags v1.6.1
-	github.com/monitoring-forge/followparser v0.2.14
+	github.com/monitoring-forge/followparser v0.2.15
 )
 
 require (

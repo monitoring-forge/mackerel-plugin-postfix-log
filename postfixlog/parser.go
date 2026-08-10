@@ -35,7 +35,7 @@ func NewPostfixParser() *PostfixParser {
 }
 
 func (pp *PostfixParser) Parse(b []byte) error {
-	if bytes.Index(b, logFilter) < 0 {
+	if !bytes.Contains(b, logFilter) {
 		return nil
 	}
 	s, err := Parse(b)

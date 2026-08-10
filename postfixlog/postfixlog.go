@@ -33,7 +33,7 @@ var re = regexp.MustCompile(`, delay=(.+?), delays=(.+?)/(.+?)/(.+?)/(.+?), dsn=
 func Parse(d1 []byte) (*Stats, error) {
 	rs := re.FindSubmatch(d1)
 	if len(rs) == 0 {
-		return nil, fmt.Errorf("Not matched")
+		return nil, fmt.Errorf("not matched")
 	}
 	return &Stats{
 		bFloat64(rs[1]),

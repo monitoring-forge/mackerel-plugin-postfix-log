@@ -115,7 +115,7 @@ Postfixログ内の `delay=...` と `delays=...` の値を元にしています�
 | `postfixlog.total_delay.*` | 1通あたりの総配信遅延時間（秒） |
 | `postfixlog.recving_delay.*` | 受信処理にかかった遅延時間（秒） |
 | `postfixlog.queuing_delay.*` | キュー内で待機していた時間（秒） |
-| `postfixlog.connection_delay.*` | 宛先SMTPサーバーへの接確確立にかかった時間（秒） |
+| `postfixlog.connection_delay.*` | 宛先SMTPサーバーへの接続確立にかかった時間（秒） |
 | `postfixlog.transmission_delay.*` | メッセージ送信にかかった時間（秒） |
 
 `*` には `average`（平均）、`90_percentile`、`95_percentile`、`99_percentile` が入ります。

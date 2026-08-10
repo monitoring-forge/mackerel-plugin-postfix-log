@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.0.11](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.10...v0.0.11) - 2026-08-10
+
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/17
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/19
+- docs: improve README with installation instructions and usage example… by @kazeburo in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/20
+
 ## [v0.0.10](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.9...v0.0.10) - 2026-07-21
 
 - repo transfer, improve CI/CD and refactor by @kazeburo in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/12

@@ -267,8 +267,7 @@ func BenchmarkPostfixParser_Parse(b *testing.B) {
 	log := []byte("Apr 19 12:50:52 relaymail1 postfix/smtp[7570]: 69FFFC00B6: to=<test@example.jp>, relay=x.x.x.x[y.y.y.y]:25, delay=0.31, delays=0.04/0/0.09/0.17, dsn=2.0.0, status=sent (250 Ok)")
 	pp := NewPostfixParser()
 
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		_ = pp.Parse(log)
 	}
 }

@@ -31,10 +31,10 @@ func (opt *Opt) Run(_ []string) (any, int) {
 		fmt.Sprintf("%s-postfixlog", opt.PosFilePrefix),
 		opt.LogFile,
 	)
-	out := pp.Output(time.Now())
 	if err != nil {
 		return err, flagrun.CRITICAL
 	}
+	out := pp.Output(time.Now())
 	return out, flagrun.OK
 }
 

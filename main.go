@@ -20,7 +20,7 @@ type Opt struct {
 	Verbose       bool   `short:"V" long:"verbose" description:"Show verbose log"`
 }
 
-func (opt *Opt) Run(_ []string) (string, int) {
+func (opt *Opt) Run(_ []string) (any, int) {
 	pp := postfixlog.NewPostfixParser()
 	fp := &followparser.Parser{
 		WorkDir:  pluginutil.PluginWorkDir(),
@@ -31,10 +31,10 @@ func (opt *Opt) Run(_ []string) (string, int) {
 		fmt.Sprintf("%s-postfixlog", opt.PosFilePrefix),
 		opt.LogFile,
 	)
-	out := pp.Output(time.Now())
 	if err != nil {
-		return err.Error(), flagrun.CRITICAL
+		return err, flagrun.CRITICAL
 	}
+	out := pp.Output(time.Now())
 	return out, flagrun.OK
 }
 

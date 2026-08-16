@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.0.12](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.11...v0.0.12) - 2026-08-16
+
+- use flagrun and fix by @kazeburo in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/22
+- update flagrun and use Runner[any] by @kazeburo in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/24
+
 ## [v0.0.11](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.10...v0.0.11) - 2026-08-10
 
 - Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/17

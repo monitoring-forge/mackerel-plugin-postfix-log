@@ -3,7 +3,7 @@ module github.com/monitoring-forge/mackerel-plugin-postfix-log
 go 1.25.0
 
 require (
-	github.com/monitoring-forge/flagrun v0.0.7
+	github.com/monitoring-forge/flagrun v0.0.8
 	github.com/monitoring-forge/followparser v0.2.15
 )
 
@@ -15,6 +15,6 @@ require (
 require (
 	github.com/avast/retry-go/v4 v4.7.0 // indirect
 	github.com/mackerelio/golib v1.2.2
-	github.com/montanaflynn/stats v0.12.3
+	github.com/montanaflynn/stats v0.12.4
 	golang.org/x/sys v0.47.0 // indirect
 )

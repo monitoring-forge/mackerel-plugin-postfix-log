@@ -4,17 +4,18 @@ go 1.25.0
 
 require (
 	github.com/monitoring-forge/flagrun v0.0.8
-	github.com/monitoring-forge/followparser v0.2.15
+	github.com/monitoring-forge/followparser v0.2.16
 )
 
 require (
 	github.com/jessevdk/go-flags v1.6.1 // indirect
 	github.com/mackerelio/checkers v0.2.1 // indirect
+	github.com/monitoring-forge/saferio v0.0.3 // indirect
 )
 
 require (
 	github.com/avast/retry-go/v4 v4.7.0 // indirect
 	github.com/mackerelio/golib v1.2.2
-	github.com/montanaflynn/stats v0.12.4
+	github.com/montanaflynn/stats v0.12.5
 	golang.org/x/sys v0.47.0 // indirect
 )

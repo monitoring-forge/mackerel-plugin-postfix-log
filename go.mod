@@ -3,7 +3,7 @@ module github.com/monitoring-forge/mackerel-plugin-postfix-log
 go 1.26.0
 
 require (
-	github.com/monitoring-forge/flagrun v0.0.8
+	github.com/monitoring-forge/flagrun v0.0.9
 	github.com/monitoring-forge/followparser v0.2.16
 )
 

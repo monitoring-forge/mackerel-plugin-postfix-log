@@ -16,6 +16,6 @@ require (
 require (
 	github.com/avast/retry-go/v4 v4.7.0 // indirect
 	github.com/mackerelio/golib v1.2.2
-	github.com/montanaflynn/stats v0.12.6
+	github.com/montanaflynn/stats v0.12.7
 	golang.org/x/sys v0.48.0 // indirect
 )

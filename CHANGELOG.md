@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.0.13](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.12...v0.0.13) - 2026-10-10
+
+- go: bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/28
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/26
+- ci: bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/29
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/31
+- go: bump the dependencies group across 1 directory with 3 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/34
+- go: bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/37
+- ci: bump Songmu/tagpr from 1.20.2 to 1.20.3 in the dependencies group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/35
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/38
+- go: bump github.com/montanaflynn/stats from 0.12.6 to 0.12.7 in the dependencies group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/39
+- ci: bump Songmu/tagpr from 1.20.3 to 1.21.1 in the dependencies group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/40
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/41
+
 ## [v0.0.12](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.11...v0.0.12) - 2026-08-16
 
 - use flagrun and fix by @kazeburo in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/22

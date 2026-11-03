@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.0.14](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.13...v0.0.14) - 2026-11-03
+
+- ci: bump Songmu/tagpr from 1.21.3 to 1.21.4 in the tagpr group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/47
+- go: bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/48
+
 ## [v0.0.13](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.12...v0.0.13) - 2026-10-31
 
 - go: bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/28

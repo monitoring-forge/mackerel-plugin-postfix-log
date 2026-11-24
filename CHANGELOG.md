@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.0.14](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.13...v0.0.14) - 2026-11-24
+
+- ci: bump Songmu/tagpr from 1.21.3 to 1.21.4 in the tagpr group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/47
+- go: bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/48
+- ci: bump Songmu/tagpr from 1.21.4 to 1.22.0 in the tagpr group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/50
+- go: bump github.com/monitoring-forge/saferio from 0.0.3 to 0.0.4 in the dependencies group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/51
+- go: bump golang.org/x/sys from 0.49.0 to 0.50.0 in the dependencies group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/52
+- ci: bump actions/setup-go from 7.0.0 to 7.1.0 in the dependencies group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/53
+
 ## [v0.0.13](https://github.com/monitoring-forge/mackerel-plugin-postfix-log/compare/v0.0.12...v0.0.13) - 2026-10-31
 
 - go: bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-postfix-log/pull/28
